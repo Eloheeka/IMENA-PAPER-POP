@@ -1,8 +1,8 @@
-export interface InvitationData {
+export type InvitationData = {
   title: string;
-  subFamily: string;
   date: string;
-  time: string;
   location: string;
-  agenda: string;
-}
+  subFamily?: string;
+  time?: string;
+  agenda?: string;
+};
