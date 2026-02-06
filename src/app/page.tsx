@@ -22,18 +22,18 @@ export default function Home() {
               Light <br /> Family
             </div>
             <div className="text-[10px] tracking-[0.3em] uppercase text-[#96712F] font-bold text-center">
-              Est. 2026 • Premium Stationery
+              Ku bw'umurava n'icyizere <br /> Imbere hacu heza <br /> Ntituzazima
             </div>
             <div className="text-[10px] tracking-[0.3em] uppercase text-[#96712F] font-bold text-right">
-              Legacy & <br /> Celebration
+              Wihogora<br /> Family
             </div>
           </div>
           <div className="flex justify-between items-end w-full">
             <div className="text-[10px] tracking-[0.3em] uppercase text-[#96712F] font-bold">
-              Vol. 01 / IPP
+              Hope Family
             </div>
             <div className="text-[10px] tracking-[0.3em] uppercase text-[#96712F] font-bold text-right">
-              Family First <br /> Architecture
+              NKONGI <br /> Architecture
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function Home() {
         <section className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl">
           <div className="mb-8 inline-flex items-center gap-3 bg-white border border-[#96712F]/20 px-4 py-2 rounded-full shadow-sm">
              <div className="w-6 h-6 bg-[#153273] rounded-full flex items-center justify-center text-[10px] text-white font-bold">I</div>
-             <span className="text-[9px] font-bold tracking-widest text-[#96712F] uppercase">Official Family Tool</span>
+             <span className="text-[9px] font-bold tracking-widest text-[#96712F] uppercase">Imena Paper Pop</span>
           </div>
 
           <h1 className="text-6xl md:text-8xl font-black text-[#153273] leading-[0.9] tracking-tighter mb-8">
