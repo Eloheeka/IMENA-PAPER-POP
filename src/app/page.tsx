@@ -19,7 +19,7 @@ export default function Home() {
         <div className="absolute inset-0 z-50 pointer-events-none p-10 flex flex-col justify-between">
           <div className="flex justify-between items-start w-full">
             <div className="text-[10px] tracking-[0.3em] uppercase text-[#96712F] font-bold leading-loose">
-              Imena <br /> Communiqué
+              Light <br /> Family
             </div>
             <div className="text-[10px] tracking-[0.3em] uppercase text-[#96712F] font-bold text-center">
               Est. 2026 • Premium Stationery
