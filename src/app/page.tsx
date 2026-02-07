@@ -33,7 +33,7 @@ export default function Home() {
               Hope Family
             </div>
             <div className="text-[10px] tracking-[0.3em] uppercase text-[#96712F] font-bold text-right">
-              NKONGI <br /> Architecture
+              NKONGI <br /> Family
             </div>
           </div>
         </div>
