@@ -7,6 +7,7 @@ export const runtime = "nodejs";
 const validCategories = new Set<InvitationData["category"]>(["Announcements", "Birthdays"]);
 const validSubFamilies = new Set<InvitationData["subFamily"]>(["Wihogora", "Light", "Hope"]);
 
+// POST handler
 export async function POST(request: NextRequest) {
   const payload = (await request.json()) as InvitationData;
 
@@ -22,11 +23,12 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ slug }, { status: 201 });
 }
 
+// GET handler — **params is synchronous**
 export async function GET(
   request: NextRequest,
-  context: { params: Promise<{ id: string }> } // ✅ Matches Next.js internal type
+  { params }: { params: { id: string } } // ✅ synchronous object
 ) {
-  const { id } = await context.params; // await the promise
+  const { id } = params;
 
   if (!id) {
     return NextResponse.json({ error: "Missing ID" }, { status: 400 });
