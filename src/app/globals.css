@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* Ensure these are at the bottom of the file */
+.border-gold-stroke {
+  -webkit-text-stroke: 1px rgba(150, 113, 47, 0.2);
+}
+
+@keyframes background-crawl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-background-crawl {
+  animation: background-crawl 80s linear infinite;
+}
+/* Add/Replace these in your globals.css */
+
+/* src/app/globals.css */
+
+/* src/app/globals.css */
+
+/* src/app/globals.css */
+
+.border-gold-glow {
+  /* Increased opacity to 0.4 for better visibility while staying 'light' */
+  -webkit-text-stroke: 2px rgba(150, 113, 47, 0.4); 
+  
+  /* Subtle glow to make the outline 'pop' against the #F9FAFB background */
+  text-shadow: 0 0 20px rgba(150, 113, 47, 0.15); 
+  
+  /* Ensure the font weight remains heavy for architectural impact */
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+@keyframes background-crawl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-background-crawl {
+  /* 120s is a luxurious, slow crawl that feels more 'premium' */
+  animation: background-crawl 120s linear infinite; 
+}
+
+@media print {
+  /* Hide everything on the page */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Show only the invitation and its children */
+  #printable-invitation, #printable-invitation * {
+    visibility: visible;
+  }
+
+  /* Position it at the very top-left of the paper */
+  #printable-invitation {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none !important; /* Remove shadows for clean printing */
+    border: none !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0b0f1a;
+    color: #e5e7eb;
+  }
+
+  .bg-\[\#F9FAFB\] { background-color: #0b0f1a !important; }
+  .bg-white { background-color: #0f172a !important; }
+  .bg-slate-200\/50 { background-color: rgba(30, 41, 59, 0.5) !important; }
+  .bg-white\/60 { background-color: rgba(15, 23, 42, 0.6) !important; }
+  .bg-white\/70 { background-color: rgba(15, 23, 42, 0.7) !important; }
+
+  .text-\[\#153273\] { color: #e5e7eb !important; }
+  .text-slate-800 { color: #e2e8f0 !important; }
+  .text-slate-600 { color: #cbd5e1 !important; }
+  .text-slate-500 { color: #a1a1aa !important; }
+  .text-slate-400 { color: #94a3b8 !important; }
+
+  .border-slate-100 { border-color: #1f2937 !important; }
+  .border-slate-200 { border-color: #334155 !important; }
+  .border-\[\#153273\]\/10 { border-color: rgba(148, 163, 184, 0.2) !important; }
+  .border-\[\#96712F\]\/20 { border-color: rgba(234, 179, 8, 0.25) !important; }
+
+  /* Keep invitation preview in its intended light theme */
+  .invitation-theme {
+    color-scheme: light;
+  }
+  .invitation-theme .bg-white { background-color: #ffffff !important; }
+  .invitation-theme .bg-\[\#FDFCFB\] { background-color: #fdfcfb !important; }
+  .invitation-theme .bg-\[\#153273\] { background-color: #153273 !important; }
+  .invitation-theme .text-\[\#153273\] { color: #153273 !important; }
+  .invitation-theme .text-\[\#96712F\] { color: #96712f !important; }
+  .invitation-theme .text-blue-600 { color: #2563eb !important; }
+  .invitation-theme .text-slate-800 { color: #1f2937 !important; }
+  .invitation-theme .border-\[\#96712F\]\/30 { border-color: rgba(150, 113, 47, 0.3) !important; }
+  .invitation-theme .border-blue-100 { border-color: #dbeafe !important; }
+  .invitation-theme .border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
+}
