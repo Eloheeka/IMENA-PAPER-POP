@@ -26,19 +26,15 @@ export async function POST(request: NextRequest) {
 // GET handler — **params is synchronous**
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } } // ✅ synchronous object
+  { params }: { params: { id: string } }
 ) {
   const { id } = params;
-
-  if (!id) {
-    return NextResponse.json({ error: "Missing ID" }, { status: 400 });
-  }
 
   const invitation = await getInvitationBySlug(id);
 
   if (!invitation) {
-    return NextResponse.json({ error: "Invitation not found" }, { status: 404 });
+    return NextResponse.json({ error: "Invitation not found" }) as unknown as Response;
   }
 
-  return NextResponse.json(invitation);
+  return NextResponse.json(invitation) as unknown as Response;
 }
