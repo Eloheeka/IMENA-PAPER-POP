@@ -6,9 +6,9 @@ export const dynamic = "force-dynamic";
 
 export async function GET(
   _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } } // ✅ remove Promise
 ) {
-  const { id } = await params;
+  const { id } = params; // no await needed
   const record = await getInvitationBySlug(id);
 
   if (!record) {
