@@ -1,15 +1,13 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { saveInvitation, getInvitationBySlug } from "@/app/lib/invitation-store";
 import { InvitationData } from "@/app/types";
 
 export const runtime = "nodejs";
 
-// For POST validation
 const validCategories = new Set<InvitationData["category"]>(["Announcements", "Birthdays"]);
 const validSubFamilies = new Set<InvitationData["subFamily"]>(["Wihogora", "Light", "Hope"]);
 
-// POST handler
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const payload = (await request.json()) as InvitationData;
 
   if (!payload || typeof payload !== "object") {
@@ -24,18 +22,16 @@ export async function POST(request: Request) {
   return NextResponse.json({ slug }, { status: 201 });
 }
 
-// GET handler
 export async function GET(
-  request: Request,
-  { params }: { params: { id: string } } // ✅ params must be object, not Promise
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> } // ✅ Matches Next.js internal type
 ) {
-  const { id } = params;
+  const { id } = await context.params; // await the promise
 
   if (!id) {
     return NextResponse.json({ error: "Missing ID" }, { status: 400 });
   }
 
-  // Use getInvitationBySlug instead of getInvitationById
   const invitation = await getInvitationBySlug(id);
 
   if (!invitation) {
